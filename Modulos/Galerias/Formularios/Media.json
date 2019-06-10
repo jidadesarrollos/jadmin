@@ -1,0 +1,33 @@
+{
+  "nombre": "Formulario de Archivos Multimedias",
+  "query": "select id_objeto_media, objeto_media, descripcion from s_objetos_media",
+  "estructura": "",
+  "identificador": "FormularioMedia",
+  "clave_primaria": "id_objeto_media",
+  "campos": {
+    "id_media": {
+      "label": "id_objeto_media",
+      "name": "id_objeto_media",
+      "id": "id_objeto_media",
+      "type": "hidden"
+    },
+    "nombre": {
+      "label": "Nombre",
+      "name": "objeto_media",
+      "orden": "1",
+      "placeholder": "Nombre",
+      "visibilidad": "1",
+      "id": "nombre",
+      "type": "text"
+    },
+    "descripcion": {
+      "label": "Descripcion",
+      "name": "descripcion",
+      "orden": "2",
+      "placeholder": "Descripcion",
+      "visibilidad": "1",
+      "id": "descripcion",
+      "type": "textarea"
+    }
+  }
+}

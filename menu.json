@@ -1,0 +1,70 @@
+{
+    "selectorMenu": "div",
+    "selectorItem": "div",
+    "class": "ide-content-wrap",
+    "itemAttrs": {
+        "class": "rtl-ps-none",
+        "data-perfect-scrollbar": "",
+        "data-suppress-scroll-x": "true"
+    },
+    "items": {
+        "Menu": {
+            "class": "sidebar-left open",
+            "submenu": {
+                "class": "navigation-left",
+                "itemAttrs": {
+                    "class": "nav-item"
+                },
+                "items": {
+                    "inicio": {
+                        "label": "<i class=\"nav-icon i-Bar-Chart\"></i><span class=\"nav-text\">Inicio</span>",
+                        "url": "/jadmin/",
+                        "a-class": "nav-item-hold",
+                        "postHtml": "<div class=\"triangle\"></div>"
+                    },
+                    "ajustes": {
+                        "label": "<i class=\"nav-icon i-File-Clipboard-File--Text\"></i><span class=\"nav-text\">Ajustes</span>",
+                        "url": "#",
+                        "attrs": {
+                            "data-item": "ajustes"
+                        },
+                        "a-class": "nav-item-hold",
+                        "postHtml": "<div class=\"triangle\"></div>"
+                    }
+                }
+            }
+        },
+        "SubMenu": {
+            "class": "sidebar-left-secondary ",
+            "submenu": {
+                "selectorMenu": "div",
+                "selectorItem": "div",
+                "items": {
+                    "Ajustes": {
+                        "submenu": {
+                            "class": "childNav",
+                            "attrs": {
+                                "data-parent": "ajustes"
+                            },
+                            "itemAttrs": {
+                                "class": "nav-item"
+                            },
+                            "items": {
+                                "Usuarios": {
+
+                                    "label": "<i class=\"nav-icon i-Mens\"></i><span class=\"nav-text\">Usuarios</span>",
+                                    "url": "/jadmin/usuario"
+                                },
+                                "Galerias": {
+
+                                    "label": "<i class=\"nav-icon i-File-Text--Image\"></i><span class=\"nav-text\">Galerias</span>",
+                                    "url": "/jadmin/galerias"
+                                }
+                            } 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
