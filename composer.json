@@ -1,0 +1,21 @@
+{
+  "name": "jida/jadmin",
+  "description": "Panel administrativo para Jida Framework",
+  "type": "Framework",
+  "minimum-stability": "dev",
+  "license": "mit",
+  "authors": [
+    {
+      "name": "jrodriguez",
+      "email": "jrodriguez@jidadesarrollos.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jadmin\\": ""
+    }
+  }
+}
