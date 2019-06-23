@@ -1,36 +1,39 @@
 {
-    "link": {
-        "shortcut icon": "/htdocs/img/logo.png"
+  "id": "jadmin",
+  "layoutError": "error",
+  "layout": "jadmin",
+  "link": {
+    "shortcut icon": "/htdocs/img/logo.png"
+  },
+  "dev": {
+    "css": {
+      "principal": {
+        "theme-all": "{tema}/htdocs/css/theme/all.min.css",
+        "theme": "{tema}/htdocs/css/theme/themes/lite-blue.css",
+        "scroll": "{tema}/htdocs/styles/vendor/perfect-scrollbar.css",
+        "font-awesome": "{tema}/htdocs/styles/css/all.min.css",
+        "jadmin": "{tema}/htdocs/css/jadmin/jadmin.css"
+      },
+      "login": {
+        "theme": "{tema}/htdocs/styles/css/themes/lite-blue.css"
+      }
     },
-    "layout": "jadmin",
-    "layoutError": "error",
-    "dev": {
-        "css": {
-            "principal": {
-                "theme": "{tema}/htdocs/styles/css/themes/lite-blue.css",
-                "scroll": "{tema}/htdocs/styles/vendor/perfect-scrollbar.css",
-                "font-awesome": "{tema}/htdocs/styles/css/all.min.css"
-            },
-            "login": {
-                "theme": "{tema}/htdocs/styles/css/themes/lite-blue.css"
-            }
-        },
-        "js": {
-            "principal": {
-                "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
-                "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
-                "bootbox" : "{tema}/htdocs/js/bootbox.min.js",
-                "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
-                "script": "{tema}/htdocs/js/script.js",
-                "sidebar": "{tema}/htdocs/js/sidebar.large.script.js",
-                "mustache": "{tema}/htdocs/js/mustache.min.js",
-                "font-awesome" : "{tema}/htdocs/js/all.min.js",
-                "validador" : "{base}/jida/htdocs/js/libs/validador.js"
-            },
-            "login": {
-                "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
-                "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js"
-            }
-        }
+    "js": {
+      "principal": {
+        "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
+        "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "bootbox": "{tema}/htdocs/js/bootbox.min.js",
+        "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
+        "script": "{tema}/htdocs/js/script.js",
+        "sidebar": "{tema}/htdocs/js/sidebar.large.script.js",
+        "mustache": "{tema}/htdocs/js/mustache.min.js",
+        "font-awesome": "{tema}/htdocs/js/all.min.js",
+        "validador": "{base}/jida/htdocs/js/libs/validador.js"
+      },
+      "login": {
+        "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
+        "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js"
+      }
     }
+  }
 }

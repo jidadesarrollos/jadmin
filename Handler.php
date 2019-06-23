@@ -2,14 +2,13 @@
 
 namespace Jadmin;
 
-use Jida\Manager\Url\Definicion;
 use Jida\Manager\Estructura;
+use Jida\Manager\Url\Definicion;
 use Jida\Manager\Vista\Tema;
-use Jida\Medios\Debug;
 
 class Handler extends \Jida\Manager\Url\Handler {
 
-    protected $path   = 'jadmin';
+    protected $path = 'jadmin';
     protected $nombre = 'jadmin';
 
     private $modulos = [
@@ -21,7 +20,7 @@ class Handler extends \Jida\Manager\Url\Handler {
 
     function definir() {
 
-        if (!self::$aplica) return;
+        if (!self::$aplica) return false;
 
         $this->definirTema();
 
@@ -30,7 +29,7 @@ class Handler extends \Jida\Manager\Url\Handler {
         $config = \Jida\Configuracion\Config::obtener();
         $modulos = $config::$modulos;
 
-        if (isset($modulos[$parametro])) {
+        if (isset($modulos[$parametro]) or in_array(Definicion::objeto($parametro), $modulos)) {
             return $this->_moduloApp($parametro);
         }
 
@@ -70,13 +69,15 @@ class Handler extends \Jida\Manager\Url\Handler {
     private function _moduloApp($modulo) {
 
         $modulo = Definicion::objeto($modulo);
+        $ds = DIRECTORY_SEPARATOR;
 
         $this->url->modulo = $modulo;
+
         Estructura::$modulo = $modulo;
         Estructura::$namespace = "App\\Modulos\\{$modulo}\\Jadmin\\Controllers";
-        $ds = DIRECTORY_SEPARATOR;
         Estructura::$ruta = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Controllers";
-        Estructura::$rutaModulo = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}";
+        Estructura::$rutaModulo = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Jadmin";
+        Estructura::$urlModulo = Estructura::$urlBase . "/Aplicacion/Modulos/{$modulo}";
 
     }
 
@@ -94,10 +95,28 @@ class Handler extends \Jida\Manager\Url\Handler {
 
     private function definirJadmin($parametro) {
 
+        $posClass = Definicion::objeto($parametro);
+        $posMetodo = Definicion::metodo($parametro);
+        $jadminApp = "\App\Jadmin\Controllers\Jadmin";
+        $esObjeto = class_exists("\App\\Jadmin\\Controllers\\$posClass");
+        Estructura::$modulo = 'Jadmin';
+        //se setea el modulo general para evitar la ejecucion del handler modulo.|
+        $this->url->modulo = 'jadmin';
+
+        if ($esObjeto or (class_exists($jadminApp) and method_exists($jadminApp, $posMetodo))) {
+
+            $this->url->reingresarParametro($parametro);
+            Estructura::$namespace = "\\App\Jadmin\\Controllers";
+            Estructura::$rutaModulo = Estructura::$rutaAplicacion . "/Jadmin";
+            Estructura::$ruta = Estructura::$rutaAplicacion . "/Jadmin";
+
+            return;
+
+        }
+
         Estructura::$namespace = "Jadmin\\Controllers";
         Estructura::$ruta = __DIR__;
         Estructura::$rutaModulo = __DIR__;
-        Estructura::$modulo = 'Jadmin';
 
     }
 }

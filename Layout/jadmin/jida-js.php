@@ -1,7 +1,3 @@
-<?php
-
-#\Jida\Medios\Debug::imprimir([$this], true);
-?>
 
 <script>
     (function () {

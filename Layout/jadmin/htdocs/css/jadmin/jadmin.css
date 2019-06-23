@@ -1,0 +1,46 @@
+.jvista .jvista-opciones {
+  text-align: right; }
+  .jvista .jvista-opciones a.btn {
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    padding: 8px 10px; }
+    .jvista .jvista-opciones a.btn:hover {
+      outline: none; }
+
+.div-error {
+  font-size: 10px;
+  position: absolute;
+  z-index: 99999;
+  background-color: #253899;
+  color: #fff;
+  max-width: 95%;
+  padding: 10px 8px;
+  text-align: justify;
+  margin-left: 5px;
+  margin-top: -45px;
+  float: left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
+
+.div-error:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 10px dashed #253899;
+  border-radius: 3px;
+  bottom: 0;
+  top: 32px;
+  left: 40px;
+  border-top-style: solid;
+  border-bottom: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
+
+/*# sourceMappingURL=jadmin.css.map */

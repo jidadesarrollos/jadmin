@@ -13,12 +13,9 @@ use App\Config\Configuracion;
 use Jida\Configuracion\Config;
 use Jida\Core\Controlador;
 use Jida\Manager\Estructura;
-use Jida\Medios\Debug;
+use Jida\Medios\Directorios;
 use Jida\Medios\Sesion;
-use Jida\Modulos\Usuarios\Usuario;
-use JidaRender\Formulario;
 use JidaRender\Menu;
-use JidaRender\Selector;
 
 class Control extends Controlador {
 
@@ -33,23 +30,17 @@ class Control extends Controlador {
         $this->_usuario = Sesion::$usuario;
         $ruta = strtolower("/" . Estructura::$modulo . '/' . Estructura::$metodo);
 
-        if ((strtolower($ruta) !== "/usuario/login") and !Sesion::es($this->_perfiles)) {
+        if (!(strtolower($ruta) == "/usuario/login") and !Sesion::es($this->_perfiles)) {
             $this->redireccionar("/jadmin/usuario/login");
-            return;
         }
 
-        if ((strtolower($ruta) !== "/usuario/login")) {
-            $this->_inicializar();
-        }
-
+        $this->_inicializar();
     }
 
     private function _inicializar() {
 
         $this->data('nombreApp', "Jida");
-
         $layout = ($this->solicitudAjax()) ? 'ajax' : 'jadmin';
-
         $this->layout($layout);
 
         $config = Config::obtener();
@@ -57,8 +48,11 @@ class Control extends Controlador {
         $urlBase = Estructura::$urlBase;
         $urlTema = Estructura::$urlJida . '/Jadmin/Layout/' . $config->tema . "/";
 
+        $path = \Jadmin\Jadmin::$directorio;
+        $menuApp = Estructura::$rutaAplicacion . "/Jadmin/menu.json";
+        if (Directorios::validar($menuApp)) $path = Estructura::$rutaAplicacion . "/Jadmin";
 
-        $menu = new Menu('menu', \Jadmin\Jadmin::$directorio);
+        $menu = new Menu('menu', $path);
         $menu->addClass('navigation-left');
 
         $this->data([
