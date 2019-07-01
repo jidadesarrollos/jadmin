@@ -14,7 +14,7 @@ use Jida\Configuracion\Config;
 use Jadmin\Controllers\Control;
 use Jida\Medios as Medios;
 use Jida\Modelos\Formulario;
-use JidaRender as Render;
+use Render as Render;
 
 class Formularios extends Control {
 
@@ -78,7 +78,7 @@ class Formularios extends Control {
             ]
         ];
 
-        $jvista = new Render\JVista($formularios, $params, 'Formularios');
+        $jvista = new JidaRender\JVista($formularios, $params, 'Formularios');
         $jvista->accionesFila([
             [
                 'span'  => 'fa fa-edit',
@@ -230,7 +230,7 @@ class Formularios extends Control {
             $titulo = 'Crear Nuevo Formulario';
         }
 
-        $form = new Render\Formulario('jida/GestionFormulario', $dataForm);
+        $form = new JidaRender\Formulario('jida/GestionFormulario', $dataForm);
         $form
             ->boton('btnGuardar', 'Guardar y editar campos')
             ->attr('value', 'Guardar')

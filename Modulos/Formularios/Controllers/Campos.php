@@ -10,7 +10,7 @@
 namespace Jadmin\Modulos\Formularios\Controllers;
 
 use Jida\Medios as Medios;
-use JidaRender as Render;
+use Render as Render;
 
 class Campos extends Fcontroller {
 
@@ -53,7 +53,7 @@ class Campos extends Fcontroller {
 
                 $data = $this->_formulario->dataCampo($idCampo)->obtenerPropiedades();
 
-                $form = new Render\Formulario('jida/CamposFormulario', $data);
+                $form = new JidaRender\Formulario('jida/CamposFormulario', $data);
                 $form->attr('action', $this->obtUrl('guardar', [
                     $idFormulario, $modulo, $idCampo
                 ]));

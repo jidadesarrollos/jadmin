@@ -13,7 +13,7 @@ namespace Jadmin\Modulos\menus\Controllers;
 use Exception;
 use Jida\Medios as Medios;
 use Jida\Modelos as Modelos;
-use JidaRender as Render;
+use Render as Render;
 
 class Opciones extends \Jadmin\Controllers\JController {
 
@@ -36,7 +36,7 @@ class Opciones extends \Jadmin\Controllers\JController {
         $menu = new Modelos\Menus($id_menu);
         $nombre = $menu->obt();
 
-        $tabla = new Render\JVista('Jida\Modelos\OpcionesMenu.obtOpciones',
+        $tabla = new JidaRender\JVista('Jida\Modelos\OpcionesMenu.obtOpciones',
                                    [
                                        'titulos' => [
                                            'Url',
@@ -139,7 +139,7 @@ class Opciones extends \Jadmin\Controllers\JController {
         if ($id != '') {
 
             $btn = 'Guardar';
-            $formulario = new Render\Formulario('RegistroOpcion', $id);
+            $formulario = new JidaRender\Formulario('RegistroOpcion', $id);
             $opcion = new Modelos\OpcionesMenu($id);
 
             if ($padre != 0)
@@ -151,7 +151,7 @@ class Opciones extends \Jadmin\Controllers\JController {
         else {
 
             $btn = 'Registrar';
-            $formulario = new Render\Formulario('RegistroOpcion');
+            $formulario = new JidaRender\Formulario('RegistroOpcion');
             $opcion = new Modelos\OpcionesMenu();
 
             if ($padre != 0)
@@ -223,7 +223,7 @@ class Opciones extends \Jadmin\Controllers\JController {
 
             }
             else {
-                // Render\Vista::msj('menus',"error","No se ha eliminado menu");
+                // JidaRender\Vista::msj('menus',"error","No se ha eliminado menu");
             }
 
             $this->redireccionar($this->obtUrl('index',
