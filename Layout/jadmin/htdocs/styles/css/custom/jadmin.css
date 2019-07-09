@@ -1,0 +1,9 @@
+/* checkbox-custom */
+.checkbox input, .radio input {
+  position: absolute;
+  opacity: unset;
+  cursor: pointer;
+  height: initial;
+  width: initial; }
+
+/*# sourceMappingURL=jadmin.css.map */

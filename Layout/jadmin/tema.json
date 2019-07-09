@@ -12,7 +12,8 @@
         "theme": "{tema}/htdocs/css/theme/themes/lite-blue.css",
         "scroll": "{tema}/htdocs/styles/vendor/perfect-scrollbar.css",
         "font-awesome": "{tema}/htdocs/styles/css/all.min.css",
-        "jadmin": "{tema}/htdocs/css/jadmin/jadmin.css"
+        "jadmin": "{tema}/htdocs/css/jadmin/jadmin.css",
+        "custom": "{tema}/htdocs/styles/css/custom/jadmin.css"
       },
       "login": {
         "theme": "{tema}/htdocs/styles/css/themes/lite-blue.css"
