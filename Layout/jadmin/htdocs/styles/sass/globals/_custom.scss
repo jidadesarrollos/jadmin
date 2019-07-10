@@ -1,0 +1,15 @@
+/* checkbox-custom */
+
+.checkbox {
+  input {
+    position: absolute;
+    opacity: unset;
+    cursor: pointer;
+    height: initial;
+    width: initial;
+  }
+}
+
+.radio {
+  @extend .checkbox;
+}
