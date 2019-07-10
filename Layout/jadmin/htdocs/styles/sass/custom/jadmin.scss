@@ -1,12 +1,15 @@
 /* checkbox-custom */
-
 .checkbox {
+  padding-left: 0;
   input {
     position: absolute;
     opacity: unset;
     cursor: pointer;
     height: initial;
     width: initial;
+  }
+  label {
+    padding-left: 20px;
   }
 }
 
