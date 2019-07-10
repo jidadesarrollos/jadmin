@@ -15,7 +15,7 @@ use Jida\Core\Controlador;
 use Jida\Manager\Estructura;
 use Jida\Medios\Directorios;
 use Jida\Medios\Sesion;
-use JidaJidaRender\Menu;
+use JidaRender\Menu;
 
 class Control extends Controlador {
 
