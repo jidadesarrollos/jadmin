@@ -22,11 +22,15 @@
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
         "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "dataTable": "{tema}/htdocs/js/jquery.dataTables.min.js",
+        "dataTable-bt": "{tema}/htdocs/js/dataTables.bootstrap4.min.js",
+        "dataTable-lenguajes": "{tema}/htdocs/js/datatable-language.js",
         "bootbox": "{tema}/htdocs/js/bootbox.min.js",
         "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
         "script": "{tema}/htdocs/js/script.js",
         "sidebar": "{tema}/htdocs/js/sidebar.large.script.js",
         "mustache": "{tema}/htdocs/js/mustache.min.js",
+        "moment": "{tema}/htdocs/js/moment.min.js",
         "font-awesome": "{tema}/htdocs/js/all.min.js",
         "validador": "{base}/jida/htdocs/js/libs/validador.js"
       },
