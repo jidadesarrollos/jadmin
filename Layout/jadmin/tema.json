@@ -32,7 +32,7 @@
         "mustache": "{tema}/htdocs/js/mustache.min.js",
         "moment": "{tema}/htdocs/js/moment.min.js",
         "font-awesome": "{tema}/htdocs/js/all.min.js",
-        "validador": "{base}/jida/htdocs/js/libs/validador.js"
+        "validador": "{tema}/htdocs/js/libs/validador.js"
       },
       "login": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
