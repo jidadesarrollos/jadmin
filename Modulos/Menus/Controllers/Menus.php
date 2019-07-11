@@ -13,7 +13,7 @@ namespace Jadmin\Modulos\menus\Controllers;
 use Exception;
 use Jadmin\Controllers\Control;
 use Jida\Medios as Medios;
-use JidaRender as Render;
+use Render as Render;
 use Jida\Modelos as Modelos;
 
 class Menus extends Control {
@@ -28,7 +28,7 @@ class Menus extends Control {
 
     public function index() {
 
-        $tabla = new Render\JVista('Jida\Modelos\Menus.obtMenus',
+        $tabla = new JidaRender\JVista('Jida\Modelos\Menus.obtMenus',
             ['titulos' => ['nombre']], 'Menus'
         );
 
@@ -51,7 +51,7 @@ class Menus extends Control {
 
     public function gestionMenu($id = '') {
 
-        $form = new Render\Formulario('Menus', $id);
+        $form = new JidaRender\Formulario('Menus', $id);
         $classMenu = new Modelos\Menus($id);
 
         $form->boton('principal')->attr('value', "Crear menu");
@@ -69,7 +69,7 @@ class Menus extends Control {
                     $msj = 'No se pudo crear el menu, por favor, vuelva a intentarlo';
                 endif;
 
-                Render\JVista::msj('menus', 'suceso', 'Menu <strong>' . $classMenu->menu . '</strong> creado exitosamente', $this->obtUrl('index'));
+                JidaRender\JVista::msj('menus', 'suceso', 'Menu <strong>' . $classMenu->menu . '</strong> creado exitosamente', $this->obtUrl('index'));
             }
         }
 
@@ -86,11 +86,11 @@ class Menus extends Control {
 
             if (!empty($cMenu->id_menu)) {
                 $cMenu->eliminar($id);
-                // Render\Vista::msj('menus','suceso', 'Menu eliminado');
+                // JidaRender\Vista::msj('menus','suceso', 'Menu eliminado');
 
             }
             else {
-                // Render\Vista::msj('menus',"error","No se ha eliminado menu");
+                // JidaRender\Vista::msj('menus',"error","No se ha eliminado menu");
             }
 
             $this->redireccionar('/jadmin/menus/');

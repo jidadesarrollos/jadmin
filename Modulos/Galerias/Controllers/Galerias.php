@@ -16,7 +16,7 @@ use Jadmin\Controllers\Control;
 use Jida\Manager\Estructura;
 use Jida\Medios\Archivos\Imagen;
 use Jida\Medios\Debug;
-use Jida\Render\JVista;
+use Jida\JidaRender\JVista;
 
 class Galerias extends Control {
 

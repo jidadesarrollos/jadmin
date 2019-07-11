@@ -11,7 +11,7 @@ namespace Jadmin\Modulos\Formularios\Controllers;
 
 use Jadmin\Controllers\JController as JController;
 use Jida\Medios as Medios;
-use JidaRender as Render;
+use Render as Render;
 use Jida\Core\GeneradorCodigo;
 
 class Fcontroller extends JController {

@@ -2,7 +2,7 @@
 
 namespace Jadmin\Modulos\Galerias\Controllers\Galerias;
 
-use Jida\Render\JVista;
+use Jida\JidaRender\JVista;
 
 Trait Vista {
 
