@@ -15,7 +15,6 @@ use Jadmin\Modulos\Galerias\Modelos\Medias;
 use Jadmin\Controllers\Control;
 use Jida\Manager\Estructura;
 use Jida\Medios\Archivos\Imagen;
-use Jida\Medios\Debug;
 use Jida\JidaRender\JVista;
 
 class Galerias extends Control {
@@ -43,8 +42,6 @@ class Galerias extends Control {
         if ($this->files('imagen')) {
             $this->_procesarCarga();
         }
-
-        //Debug::mostrarArray($banners->banners(), true);
 
         $this->data([
             'media'    => $medias->media(),
