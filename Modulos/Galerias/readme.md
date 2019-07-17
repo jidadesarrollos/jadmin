@@ -1,4 +1,4 @@
-#Instalación Módulo Galerías
+# Instalación Módulo Galerías
 
 Para implementar el módulo galerías se deben seguir los siguientes pasos:
 
