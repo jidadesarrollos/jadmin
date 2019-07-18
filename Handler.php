@@ -5,12 +5,13 @@ namespace Jadmin;
 use Jida\Manager\Estructura;
 use Jida\Manager\Url\Definicion;
 use Jida\Manager\Vista\Tema;
+use Jida\Medios\Debug;
 
 class Handler extends \Jida\Manager\Url\Handler {
 
     protected $path = 'jadmin';
     protected $nombre = 'jadmin';
-
+    protected static $urlJadmin;
     private $modulos = [
         'formularios' => 'formularios',
         'menus'       => 'menus',
@@ -24,6 +25,8 @@ class Handler extends \Jida\Manager\Url\Handler {
 
         $this->definirTema();
 
+        $path = str_replace(DS, "/", str_replace(Estructura::$directorio, "", __DIR__));
+        self::$urlJadmin = Estructura::$urlBase . "$path";
         $parametro = $this->url->proximoParametro();
 
         $config = \Jida\Configuracion\Config::obtener();
@@ -73,6 +76,7 @@ class Handler extends \Jida\Manager\Url\Handler {
 
         $this->url->modulo = $modulo;
 
+        Debug::imprimir([__DIR__], true);
         Estructura::$modulo = $modulo;
         Estructura::$namespace = "App\\Modulos\\{$modulo}\\Jadmin\\Controllers";
         Estructura::$ruta = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Controllers";
@@ -89,7 +93,7 @@ class Handler extends \Jida\Manager\Url\Handler {
         Estructura::$namespace = "Jadmin\\Modulos\\{$modulo}\\Controllers";
         Estructura::$ruta = __DIR__ . DS . "Modulos" . DS . "Controllers";
         Estructura::$rutaModulo = __DIR__ . DS . "Modulos" . DS . $modulo;
-        Estructura::$urlModulo = Estructura::$urlBase . '/Jadmin/Modulos' . DS . $modulo;
+        Estructura::$urlModulo = self::$urlJadmin . "/Modulos/$modulo";
 
     }
 
