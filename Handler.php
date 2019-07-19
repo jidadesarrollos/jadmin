@@ -76,7 +76,7 @@ class Handler extends \Jida\Manager\Url\Handler {
 
         $this->url->modulo = $modulo;
 
-        Debug::imprimir([__DIR__], true);
+        #Debug::imprimir([__DIR__], true);
         Estructura::$modulo = $modulo;
         Estructura::$namespace = "App\\Modulos\\{$modulo}\\Jadmin\\Controllers";
         Estructura::$ruta = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Controllers";
