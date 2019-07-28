@@ -2,9 +2,9 @@
     'use strict';
 
     const RUTAS = {
-        'EDITAR': `${jida.url.actual}/gestion`,
-        'ELIMINAR': `${jida.url.actual}/eliminar`,
-        'ENVIO': `${jida.url.actual}/carga`
+        'EDITAR': `${jida.urls.actual}/gestion`,
+        'ELIMINAR': `${jida.urls.actual}/eliminar`,
+        'ENVIO': `${jida.urls.actual}/carga`
     };
 
     let $btn = $('#btnCargaImagen');

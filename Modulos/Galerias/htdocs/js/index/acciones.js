@@ -45,7 +45,7 @@ function Acciones(galeria, RUTAS) {
             'callback': function (ejecutar) {
                 if (ejecutar) {
                     llamadaAjax({
-                        'url': `${jida.url.actual}/eliminar/${id}`,
+                        'url': `${jida.urls.actual}/eliminar/${id}`,
                         'type': 'post',
                         'data': {'eliminar': true},
                         'dataType': 'json'
