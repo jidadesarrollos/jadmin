@@ -11,11 +11,11 @@ namespace Jadmin\Modulos\Galerias\Controllers;
 use Jadmin\Modulos\Galerias\Controllers\Galerias\Vista;
 use Jadmin\Modulos\Galerias\Controllers\Galerias\Gestion;
 use Jadmin\Modulos\Galerias\Controllers\Galerias\Carga;
-use Jadmin\Modulos\Galerias\Modelos\Medias;
+use Jadmin\Modulos\Galerias\Modelos\Media;
 use Jadmin\Controllers\Control;
 use Jida\Manager\Estructura;
 use Jida\Medios\Archivos\Imagen;
-use Jida\JidaRender\JVista;
+use JidaRender\JVista;
 
 class Galerias extends Control {
 
@@ -37,7 +37,7 @@ class Galerias extends Control {
             'modulo/galerias.css'
         ]);
 
-        $medias = new Medias();
+        $medias = new Media();
 
         if ($this->files('imagen')) {
             $this->_procesarCarga();
@@ -57,7 +57,7 @@ class Galerias extends Control {
 
     function eliminar($id = "") {
 
-        $media = new Medias($id);
+        $media = new Media($id);
         if (!$media->id_objeto_media) {
             JVista::msj(
                 'vistaProyectos',

@@ -2,7 +2,7 @@
 
 namespace Jadmin\Modulos\Galerias\Controllers\Galerias;
 
-use Jida\JidaRender\JVista;
+use JidaRender\JVista;
 
 Trait Vista {
 
@@ -41,4 +41,5 @@ Trait Vista {
         return $vista;
 
     }
+
 }

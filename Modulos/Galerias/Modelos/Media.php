@@ -3,11 +3,9 @@
 namespace Jadmin\Modulos\Galerias\Modelos;
 
 use Jida\BD\DataModel;
-use Jida\BD\Modelo;
 use Jida\Manager\Estructura;
-use Jida\Medios\Debug;
 
-class Medias extends DataModel {
+class Media extends DataModel {
 
     public $id_objeto_media;
     public $objeto_media;

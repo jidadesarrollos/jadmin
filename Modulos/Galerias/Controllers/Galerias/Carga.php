@@ -5,13 +5,11 @@
 
 namespace Jadmin\Modulos\Galerias\Controllers\Galerias;
 
-use Jadmin\Modulos\Galerias\Modelos\Medias;
+use Jadmin\Modulos\Galerias\Modelos\Media;
 use Jida\Configuracion\Config;
 use Jida\Manager\Estructura;
 use Jida\Medios\Archivos\Imagen;
 use Jida\Medios\Archivos\ProcesadorCarga;
-use Jida\Medios\Debug;
-use Jida\Modelos\ObjetoMedia;
 
 Trait Carga {
 
@@ -20,7 +18,7 @@ Trait Carga {
         $imagen = $this->files('imagen');
 
         $procesador = new ProcesadorCarga('imagen');
-        $banner = new Medias();
+        $banner = new Media();
 
         $configuracion = Config::obtener();
 
@@ -67,10 +65,10 @@ Trait Carga {
 
         return [
             'objeto_media' => $imagen->nombre,
-            'tipo_media'     => 1,
-            'directorio'     => str_replace(Estructura::$directorio, "", $imagen->directorio),
-            'meta_data'      => json_encode(['urls' => str_replace(Estructura::$urlBase, "", $imagen->obtUrls())]),
-            'id_idioma'      => 'esp'
+            'tipo_media'   => 1,
+            'directorio'   => str_replace(Estructura::$directorio, "", $imagen->directorio),
+            'meta_data'    => json_encode(['urls' => str_replace(Estructura::$urlBase, "", $imagen->obtUrls())]),
+            'id_idioma'    => 'esp'
         ];
 
     }
