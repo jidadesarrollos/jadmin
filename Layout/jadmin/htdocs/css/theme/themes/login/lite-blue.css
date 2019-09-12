@@ -17960,8 +17960,8 @@ span.fa.fa-chevron-right:before {
   height: 100%; }
 
 .auth-logo img {
-  width: 100px;
-  height: 100px; }
+  max-width: 300px;
+  max-height: 100px; }
 
 @media (min-width: 1024px) {
   .auth-layout-wrap .auth-content {
