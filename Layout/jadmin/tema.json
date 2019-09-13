@@ -8,6 +8,9 @@
   "dev": {
     "css": {
       "principal": {
+        "main": "{tema}/htdocs/css/main/jadmin.css"
+      },
+      "backup": {
         "theme-all": "{tema}/htdocs/css/theme/all.min.css",
         "theme": "{tema}/htdocs/css/theme/themes/lite-blue.css",
         "scroll": "{tema}/htdocs/vendor/perfect-scrollbar.css",
