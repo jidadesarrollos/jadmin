@@ -22,10 +22,13 @@ class Media extends DataModel {
     protected $tablaBD = "s_objetos_media";
     protected $pk = 'id_objeto_media';
 
-    public function media() {
+    public function media($limit = false) {
 
         $media = [];
-        $data = $this->consulta()->obt();
+        
+        $this->consulta();
+        if ($limit !== false) $this->limit($limit);
+        $data = $this->obt();
 
         foreach ($data as $id => $mediaItem) {
 
