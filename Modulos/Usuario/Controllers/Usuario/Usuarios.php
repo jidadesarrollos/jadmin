@@ -21,7 +21,7 @@ trait Usuarios {
     public function index() {
 
         $listaUsuarios = Usuario::listaUsuarios();
-        $parametros = ['titulos' => ['Usuario', 'Nombre', 'Apellido', 'Correo', 'Perfiles']];
+        $parametros = ['titulos' => ['Usuario', 'Nombre', 'Apellido', 'Correo', 'Perfiles', 'Estatus']];
         $vista = new JVista($listaUsuarios, $parametros);
 
         $vista->accionesFila([
@@ -41,7 +41,6 @@ trait Usuarios {
             'Nuevo Usuario' => ['href' => '/jadmin/usuario/gestion/']
         ]);
 
-
         $render = $vista->render(
             function ($datos) {
 
@@ -52,6 +51,7 @@ trait Usuarios {
                     }
                     $listaPerfiles .= '</ul>';
                     $users['perfiles'] = $listaPerfiles;
+                    $users['id_estatus'] = $users['id_estatus'] == 1 ? 'Activo' : 'Inactivo';
                 }
                 return $datos;
             }
@@ -110,28 +110,28 @@ trait Usuarios {
 
             if ($form->validar()) {
 
-                if(!empty($id_usuario)){
+                if (!empty($id_usuario)) {
                     $this->post('clave', $usuario->clave);
-                } else {
+                }
+                else {
                     $this->post('clave', md5('123456'));
                 }
 
                 $this->post('activo', 1);
                 $this->post('validacion', 1);
 
-
                 if ($usuario->salvar($this->post())) {
 
                     $accion = (empty($id)) ? 'guardado' : 'modificado';
                     Mensajes::almacenar(Mensajes::suceso("El usuario ha sido {$accion} correctamente"));
                     $this->redireccionar('/jadmin/usuario');
-                } else {
+                }
+                else {
                     echo 'ERROR';
                 }
             }
             else {
                 echo 'ERROR';
-                //$form::msj('error', 'Los datos ingresados no son v&aacute;lidos');
             }
         }
 
