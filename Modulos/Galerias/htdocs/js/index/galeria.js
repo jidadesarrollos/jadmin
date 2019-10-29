@@ -11,6 +11,7 @@ function Galeria($galeria, RUTAS) {
 
     this.actualizar = respuesta => {
 
+        console.log(1, respuesta);
         $('#spanCargaImg').remove();
         let $imagenes = $('.jcargafile');
 
