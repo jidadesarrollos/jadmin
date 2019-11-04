@@ -135,7 +135,6 @@
                 'data': form,
                 'dataType': 'json',
                 'success': function (r) {
-                    console.log(10, r);
                     plugin.file.value = '';
                     plugin._archivosCargados = 0;
                     plugin._configuracion.postCarga(r);
