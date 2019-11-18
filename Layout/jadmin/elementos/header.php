@@ -1,4 +1,4 @@
-<div class="main-header">
+<navbar class="main-header jd-navbar-menu">
     <div class="logo">
         <img src="<?= $this->urlBase ?>/htdocs/img/logo.png" alt="">
     </div>
@@ -16,8 +16,9 @@
         <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
         <!-- User avatar dropdown -->
         <div class="dropdown">
-            <i class="i-Administrator text-muted header-icon" id="dropdownMenuButton" data-toggle="dropdown"
-               aria-haspopup="true" role="button" aria-expanded="false"></i>
+            <i
+                class="i-Administrator user-avatar" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" role="button" aria-expanded="false"></i>
             <div class="user col align-self-end">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <div class="dropdown-header">
@@ -30,6 +31,6 @@
         </div>
     </div>
 
-</div>
+</navbar>
 
 <!--=============== Left side End ================-->

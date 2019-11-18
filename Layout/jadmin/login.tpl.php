@@ -11,12 +11,12 @@
 </head>
 
 <body class="text-left">
-<div class="auth-layout-wrap" style="background-image: url(<?= $this->urlTema ?>/htdocs/images/photo-wide-4.jpg)">
-    <div class="auth-content">
-        <?= $contenido ?>
+    <div class="auth-layout-wrap" style="background-image: url(<?= $this->urlTema ?>/htdocs/images/photo-wide-4.jpg)">
+        <div class="auth-content">
+            <?= $this->contenido() ?>
+        </div>
     </div>
-</div>
 
-<?= $this->imprimirLibrerias('js', 'login') ?>
+    <?= $this->imprimirLibrerias('js', 'login') ?>
 </body>
 </html>

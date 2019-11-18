@@ -1,1 +1,1 @@
-<?= $contenido ?>
+<?= $this->contenido() ?>

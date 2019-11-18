@@ -13,11 +13,9 @@
     <body class="text-left">
         <div class="app-admin-wrap layout-sidebar-large clearfix">
             <?= $this->incluir('elementos/header') ?>
-
             <?= $this->menu ?>
             <div class="main-content-wrap sidenav-open d-flex flex-column">
-                <?= $contenido ?>
-
+                <?= $this->contenido() ?>
                 <?= $this->incluir('elementos/footer') ?>
             </div>
         </div>
