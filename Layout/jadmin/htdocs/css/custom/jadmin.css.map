@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,qBAAqB;AACrB,iBAAU;EACR,YAAY,EAAE,CAAC;EACf,6BAAM;IACJ,QAAQ,EAAE,QAAQ;IAClB,OAAO,EAAE,KAAK;IACd,MAAM,EAAE,OAAO;IACf,MAAM,EAAE,OAAO;IACf,KAAK,EAAE,OAAO;EAEhB,6BAAM;IACJ,YAAY,EAAE,IAAI",
-"sources": ["../../sass/custom/jadmin.scss"],
-"names": [],
-"file": "jadmin.css"
-}

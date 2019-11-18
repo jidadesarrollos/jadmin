@@ -2,10 +2,9 @@
   "name": "Jadmin",
   "version": "0.0.1",
   "description": "Administrador de contenidos de Jida Desarrollos",
-  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "node-sass Layout/jadmin/htdocs/scss/jadmin.scss Layout/jadmin/htdocs/css/main/jadmin.css -w -i --indent-type tab"
+    "sass": "node-sass Layout/jadmin/htdocs/scss/main.scss Layout/jadmin/htdocs/css/main/jadmin.css -w -i --indent-type tab"
   },
   "author": "Jida Team",
   "license": "ISC",
