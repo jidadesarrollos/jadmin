@@ -1,0 +1,13 @@
+{
+  "path": "./",
+  "env": "dev",
+  "dev": {
+    "react": "/htdocs/modules/libs/react.development.js",
+    "reactDOM": "/htdocs/modules/libs/react-dom.development.js"
+  },
+  "prod": {
+    "compress": true,
+    "react": "/htdocs/modules/libs/react.development.js",
+    "reactDOM": "/htdocs/modules/libs/react-dom.development.js"
+  }
+}

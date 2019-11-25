@@ -10,12 +10,9 @@
     <?= $this->imprimirLibrerias('head', 'login') ?>
 </head>
 
-<body class="text-left">
-    <div class="auth-layout-wrap" style="background-image: url(<?= $this->urlTema ?>/htdocs/images/photo-wide-4.jpg)">
-        <div class="auth-content">
-            <?= $this->contenido() ?>
-        </div>
-    </div>
+<body class="jida-login-container">
+
+    <?= $this->contenido() ?>
 
     <?= $this->imprimirLibrerias('js', 'login') ?>
 </body>
