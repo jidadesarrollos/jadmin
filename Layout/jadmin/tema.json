@@ -18,6 +18,7 @@
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
         "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
         "script": "{tema}/htdocs/js/script.js",
         "sidebar": "{tema}/htdocs/js/sidebar.large.script.js"
       },
@@ -53,6 +54,7 @@
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
         "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
         "script": "{tema}/htdocs/js/script.js",
         "sidebar": "{tema}/htdocs/js/sidebar.large.script.js"
       },
