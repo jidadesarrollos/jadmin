@@ -1,11 +1,11 @@
 $(document).ready(function () {
     "use strict";
-    var $sidebarToggle = $(".menu-toggle");
-    var $sidebarLeft = $(".sidebar-left");
-    var $sidebarLeftSecondary = $(".sidebar-left-secondary");
-    var $sidebarOverlay = $(".sidebar-overlay");
-    var $mainContentWrap = $(".main-content-wrap");
-    var $sideNavItem = $(".nav-item");
+    let $sidebarToggle = $(".menu-toggle");
+    let $sidebarLeft = $(".sidebar-left");
+    let $sidebarLeftSecondary = $(".sidebar-left-secondary");
+    let $sidebarOverlay = $(".sidebar-overlay");
+    let $mainContentWrap = $(".main-content-wrap");
+    let $sideNavItem = $(".nav-item");
 
     function openSidebar() {
         $sidebarLeft.addClass("open");
@@ -30,7 +30,7 @@ $(document).ready(function () {
         $sidebarOverlay.removeClass("open");
     }
     function navItemToggleActive($activeItem) {
-        var $navItem = $(".nav-item");
+        let $navItem = $(".nav-item");
         $navItem.removeClass("active");
         $activeItem.addClass("active");
     }
