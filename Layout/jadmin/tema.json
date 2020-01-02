@@ -3,7 +3,7 @@
   "layoutError": "error",
   "layout": "jadmin",
   "link": {
-    "shortcut icon": "/htdocs/img/logo.png"
+    "shortcut icon": "{base}/htdocs/img/logo.png"
   },
   "dev": {
     "css": {
@@ -17,7 +17,10 @@
     "js": {
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
-        "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js"
+        "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
+        "script": "{tema}/htdocs/js/script.js",
+        "sidebar": "{tema}/htdocs/js/sidebar.large.script.js"
       },
       "backup": {
         "dataTable": "{tema}/htdocs/js/jquery.dataTables.min.js",
@@ -41,21 +44,21 @@
   "prod": {
     "css": {
       "principal": {
-        "theme-all": "{tema}/htdocs/css/theme/all.min.css",
-        "theme": "{tema}/htdocs/css/theme/themes/lite-blue.css",
-        "scroll": "{tema}/htdocs/vendor/perfect-scrollbar.css",
-        "font-awesome": "{tema}/htdocs/css/font-awesome/all.min.css",
-        "jadmin": "{tema}/htdocs/css/jadmin/jadmin.css",
-        "custom": "{tema}/htdocs/css/custom/jadmin.css"
+        "main": "{tema}/htdocs/css/main/jadmin.css"
       },
       "login": {
-        "theme": "{tema}/htdocs/css/theme/themes/login/lite-blue.css"
+        "theme": "{tema}/htdocs/css/main/jadmin.css"
       }
     },
     "js": {
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
         "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
+        "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
+        "script": "{tema}/htdocs/js/script.js",
+        "sidebar": "{tema}/htdocs/js/sidebar.large.script.js"
+      },
+      "backup": {
         "dataTable": "{tema}/htdocs/js/jquery.dataTables.min.js",
         "dataTable-bt": "{tema}/htdocs/js/dataTables.bootstrap4.min.js",
         "dataTable-lenguajes": "{tema}/htdocs/js/datatable-language.js",
