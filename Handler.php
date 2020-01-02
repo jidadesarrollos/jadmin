@@ -5,7 +5,6 @@ namespace Jadmin;
 use Jida\Manager\Estructura;
 use Jida\Manager\Url\Definicion;
 use Jida\Manager\Vista\Tema;
-use Jida\Medios\Debug;
 
 class Handler extends \Jida\Manager\Url\Handler {
 
@@ -71,7 +70,6 @@ class Handler extends \Jida\Manager\Url\Handler {
 
         $this->url->modulo = $modulo;
 
-        #Debug::imprimir([__DIR__], true);
         Estructura::$modulo = $modulo;
         Estructura::$namespace = "App\\Modulos\\{$modulo}\\Jadmin\\Controllers";
         Estructura::$ruta = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Controllers";
@@ -90,7 +88,6 @@ class Handler extends \Jida\Manager\Url\Handler {
         Estructura::$rutaModulo = __DIR__ . DS . "Modulos" . DS . $modulo;
         Estructura::$urlModulo = self::$urlJadmin . "/Modulos/$modulo";
         Estructura::$directorio = __DIR__;
-        //Debug::imprimir([3, Estructura::get()], true);
 
     }
 
@@ -104,9 +101,7 @@ class Handler extends \Jida\Manager\Url\Handler {
         //se setea el modulo general para evitar la ejecucion del handler modulo.|
         $this->url->modulo = 'jadmin';
 
-        Debug::imprimir([1]);
         if ($esObjeto or (class_exists($jadminApp) and method_exists($jadminApp, $posMetodo))) {
-            Debug::imprimir([2], true);
             $this->url->reingresarParametro($parametro);
             Estructura::$namespace = "\\App\Jadmin\\Controllers";
             Estructura::$rutaModulo = Estructura::$rutaAplicacion . "/Jadmin";
