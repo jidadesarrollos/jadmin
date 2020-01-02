@@ -95,7 +95,7 @@ class Handler extends \Jida\Manager\Url\Handler {
     }
 
     private function definirJadmin($parametro) {
-        Debug::imprimir([2], true);
+
         $posClass = Definicion::objeto($parametro);
         $posMetodo = Definicion::metodo($parametro);
         $jadminApp = "\App\Jadmin\Controllers\Jadmin";
