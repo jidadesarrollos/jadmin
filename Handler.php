@@ -37,6 +37,7 @@ class Handler extends \Jida\Manager\Url\Handler {
         }
 
         if (isset($this->modulos[$parametro])) {
+
             return $this->_definirModulo($parametro);
         }
 
@@ -49,20 +50,14 @@ class Handler extends \Jida\Manager\Url\Handler {
         $tema = Tema::obtener();
         $config = \Jida\Configuracion\Config::obtener();
 
-        if (isset($config->temaJadmin)) {
-            $config->tema = $config->temaJadmin;
-            $tema->definir(['tema' => $config->temaJadmin]);
-            return true;
-        }
-
-        $config->tema = 'jadmin';
+        $config->tema = (isset($config->temaJadmin)) ? $config->temaJadmin : 'jadmin';
         $directorio = __DIR__ . "/Layout/jadmin";
         $url = str_replace(Estructura::$directorio, "", $directorio);
 
         $configuracion = [
             'directorio' => $directorio,
             'url'        => Estructura::$urlBase . str_replace("\\", "/", $url),
-            'tema'       => 'jadmin'
+            'tema'       => $config->tema
         ];
 
         $tema->definir($configuracion);
@@ -94,11 +89,13 @@ class Handler extends \Jida\Manager\Url\Handler {
         Estructura::$ruta = __DIR__ . DS . "Modulos" . DS . "Controllers";
         Estructura::$rutaModulo = __DIR__ . DS . "Modulos" . DS . $modulo;
         Estructura::$urlModulo = self::$urlJadmin . "/Modulos/$modulo";
+        Estructura::$directorio = __DIR__;
+        //Debug::imprimir([3, Estructura::get()], true);
 
     }
 
     private function definirJadmin($parametro) {
-
+        Debug::imprimir([2], true);
         $posClass = Definicion::objeto($parametro);
         $posMetodo = Definicion::metodo($parametro);
         $jadminApp = "\App\Jadmin\Controllers\Jadmin";
@@ -107,8 +104,9 @@ class Handler extends \Jida\Manager\Url\Handler {
         //se setea el modulo general para evitar la ejecucion del handler modulo.|
         $this->url->modulo = 'jadmin';
 
+        Debug::imprimir([1]);
         if ($esObjeto or (class_exists($jadminApp) and method_exists($jadminApp, $posMetodo))) {
-
+            Debug::imprimir([2], true);
             $this->url->reingresarParametro($parametro);
             Estructura::$namespace = "\\App\Jadmin\\Controllers";
             Estructura::$rutaModulo = Estructura::$rutaAplicacion . "/Jadmin";
