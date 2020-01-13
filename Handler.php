@@ -28,7 +28,7 @@ class Handler extends \Jida\Manager\Url\Handler {
         $path = str_replace(DS, "/", str_replace(Estructura::$directorio, "", __DIR__));
         self::$urlJadmin = Estructura::$urlBase . "$path";
         $parametro = $this->url->proximoParametro();
-
+        Debug::imprimir([1, $parametro]);
         $config = \Jida\Configuracion\Config::obtener();
         $modulos = $config::$modulos;
 
@@ -95,8 +95,9 @@ class Handler extends \Jida\Manager\Url\Handler {
     }
 
     private function definirJadmin($parametro) {
-        Debug::imprimir([2], true);
-        $posClass = Definicion::objeto($parametro);
+
+        $posClass = (empty($parametro)) ? 'Jadmin' : Definicion::objeto($parametro);
+        
         $posMetodo = Definicion::metodo($parametro);
         $jadminApp = "\App\Jadmin\Controllers\Jadmin";
         $esObjeto = class_exists("\App\\Jadmin\\Controllers\\$posClass");
@@ -104,9 +105,8 @@ class Handler extends \Jida\Manager\Url\Handler {
         //se setea el modulo general para evitar la ejecucion del handler modulo.|
         $this->url->modulo = 'jadmin';
 
-        Debug::imprimir([1]);
         if ($esObjeto or (class_exists($jadminApp) and method_exists($jadminApp, $posMetodo))) {
-            Debug::imprimir([2], true);
+
             $this->url->reingresarParametro($parametro);
             Estructura::$namespace = "\\App\Jadmin\\Controllers";
             Estructura::$rutaModulo = Estructura::$rutaAplicacion . "/Jadmin";
