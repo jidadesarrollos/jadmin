@@ -28,7 +28,6 @@ class Handler extends \Jida\Manager\Url\Handler {
         $path = str_replace(DS, "/", str_replace(Estructura::$directorio, "", __DIR__));
         self::$urlJadmin = Estructura::$urlBase . "$path";
         $parametro = $this->url->proximoParametro();
-        Debug::imprimir([1, $parametro]);
         $config = \Jida\Configuracion\Config::obtener();
         $modulos = $config::$modulos;
 
@@ -71,7 +70,6 @@ class Handler extends \Jida\Manager\Url\Handler {
 
         $this->url->modulo = $modulo;
 
-        #Debug::imprimir([__DIR__], true);
         Estructura::$modulo = $modulo;
         Estructura::$namespace = "App\\Modulos\\{$modulo}\\Jadmin\\Controllers";
         Estructura::$ruta = Estructura::$rutaAplicacion . "{$ds}Modulos{$ds}{$modulo}{$ds}Controllers";
@@ -90,14 +88,13 @@ class Handler extends \Jida\Manager\Url\Handler {
         Estructura::$rutaModulo = __DIR__ . DS . "Modulos" . DS . $modulo;
         Estructura::$urlModulo = self::$urlJadmin . "/Modulos/$modulo";
         Estructura::$directorio = __DIR__;
-        //Debug::imprimir([3, Estructura::get()], true);
 
     }
 
     private function definirJadmin($parametro) {
 
         $posClass = (empty($parametro)) ? 'Jadmin' : Definicion::objeto($parametro);
-        
+
         $posMetodo = Definicion::metodo($parametro);
         $jadminApp = "\App\Jadmin\Controllers\Jadmin";
         $esObjeto = class_exists("\App\\Jadmin\\Controllers\\$posClass");
