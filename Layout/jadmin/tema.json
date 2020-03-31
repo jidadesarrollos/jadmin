@@ -18,7 +18,6 @@
       "principal": {
         "jq": "{tema}/htdocs/js/vendor/jquery-3.3.1.min.js",
         "bt": "{tema}/htdocs/js/vendor/bootstrap.bundle.min.js",
-        "fa": "https://kit.fontawesome.com/e2761a2095.js",
         "bootbox": "{tema}/htdocs/js/bootbox.min.js",
         "mustache": "{tema}/htdocs/js/mustache.min.js",
         "scroll": "{tema}/htdocs/js/vendor/perfect-scrollbar.min.js",
