@@ -2,11 +2,13 @@
   "en": {
     "login": {
       "title": "Log In",
-      "errorForm": "User or password are invalid"
+      "errorForm": "User or password are invalid",
+      "btn": "Log in"
     }
   },
   "es": {
     "title": "Inicio de sesion",
-    "errorForm": "Usuario o clave inválidos"
+    "errorForm": "Usuario o clave inválidos",
+    "btn": "Inicio de sesion"
   }
 }

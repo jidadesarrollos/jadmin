@@ -28,7 +28,7 @@ class Usuario extends Control {
         $this->layout('login');
         $formName = (Estructura::$idioma === 'en') ? 'jida/Login_en' : 'jida/Login';
         $formLogin = new Formulario($formName);
-        $formLogin->boton('principal', 'Iniciar sesión');
+        $formLogin->boton('principal', $textos->texto('btn'));
         $formLogin->boton('principal')->attr('class', 'btn btn-primary btn-block');
 
         if ($this->post('btnLogin')) {

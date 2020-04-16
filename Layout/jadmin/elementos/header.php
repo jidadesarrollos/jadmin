@@ -1,3 +1,7 @@
+<?php
+
+//\Jida\Medios\Debug::imprimir([$this->textos], true);
+?>
 <navbar class="main-header jd-navbar-menu">
     <div class="logo">
         <img src="<?= $this->urlBase ?>/htdocs/img/logo.png" alt="">
@@ -24,8 +28,12 @@
                     <div class="dropdown-header">
                         <i class="i-Lock-User mr-1"></i> <?= \Jida\Medios\Sesion::$usuario->nombre() ?>
                     </div>
-                    <a class="dropdown-item" href="<?= $this->urlBase ?>/jadmin/usuario/cambioclave">Cambiar clave</a>
-                    <a class="dropdown-item" href="<?= $this->urlBase ?>/jadmin/usuario/logout">Salir</a>
+                    <a
+                        class="dropdown-item"
+                        href="<?= $this->urlBase ?>/jadmin/usuario/cambioclave"><?= $this->texto('menu', 'resetPassword') ?></a>
+                    <a
+                        class="dropdown-item"
+                        href="<?= $this->urlBase ?>/jadmin/usuario/logout"><?= $this->texto('menu', 'logout') ?></a>
                 </div>
             </div>
         </div>

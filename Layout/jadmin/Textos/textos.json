@@ -1,0 +1,14 @@
+{
+  "en": {
+    "menu": {
+      "resetPassword": "Reset password",
+      "logout": "Logout"
+    }
+  },
+  "es": {
+    "menu": {
+      "resetPassword": "Cambio de clave",
+      "logout": "Salir"
+    }
+  }
+}
