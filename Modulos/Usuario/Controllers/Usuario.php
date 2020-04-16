@@ -11,6 +11,7 @@ namespace Jadmin\Modulos\Usuario\Controllers;
 use Jadmin\Controllers\Control;
 use Jadmin\Modulos\Usuario\Controllers\Usuario\Usuarios;
 use Jida\Manager\Estructura;
+use Jida\Manager\Textos;
 use Jida\Medios\Debug;
 use Jida\Medios\Mensajes;
 use Jida\Medios\Sesion;
@@ -23,9 +24,10 @@ class Usuario extends Control {
 
     public function login() {
 
+        $textos = Textos::obtener();
         $this->layout('login');
-
-        $formLogin = new Formulario('jida/Login');
+        $formName = (Estructura::$idioma === 'en') ? 'jida/Login_en' : 'jida/Login';
+        $formLogin = new Formulario($formName);
         $formLogin->boton('principal', 'Iniciar sesión');
         $formLogin->boton('principal')->attr('class', 'btn btn-primary btn-block');
 
@@ -38,7 +40,8 @@ class Usuario extends Control {
                 $this->redireccionar('/jadmin');
             }
 
-            Formulario::msj('error', 'Datos incorrectos');
+
+            Formulario::msj('error', $textos->texto('errorForm'));
 
         }
 
@@ -47,12 +50,12 @@ class Usuario extends Control {
             'formulario' => $formLogin->render()
         ]);
 
-
     }
 
     public function cambioClave() {
 
-        $formCambioClave = new Formulario('jida/CambioClave');
+        $formName = (Estructura::$idioma === 'en') ? 'jida/ChangePasword' : 'jida/CambioClave';
+        $formCambioClave = new Formulario($formName);
         $formCambioClave->boton('principal', 'Cambiar Clave');
 
         $this->data(['formulario' => $formCambioClave->render()]);

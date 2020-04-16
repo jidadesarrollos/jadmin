@@ -1,7 +1,14 @@
 {
   "es": {
     "index": {
-      "titulo": "Panel Administrativo"
+      "titulo": "Panel Administrativo",
+      "errorForm": "Usuario o clave inválidos"
+    }
+  },
+  "en": {
+    "index": {
+      "titulo": "Administrative Panel",
+      "errorForm": "User or password are invalid"
     }
   }
 }

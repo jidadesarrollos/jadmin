@@ -1,0 +1,12 @@
+{
+  "en": {
+    "login": {
+      "title": "Log In",
+      "errorForm": "User or password are invalid"
+    }
+  },
+  "es": {
+    "title": "Inicio de sesion",
+    "errorForm": "Usuario o clave inválidos"
+  }
+}
