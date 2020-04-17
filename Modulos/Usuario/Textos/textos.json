@@ -6,7 +6,12 @@
       "btn": "Log in"
     },
     "cambioclave": {
-      "title": "Password Change"
+      "title": "Password Change",
+      "btn": "Change password",
+      "errorForm1": "The data entered is not valid.",
+      "errorForm2": "The current password is not the same as the confirmation.",
+      "errorForm3": "The current password you entered is incorrect.",
+      "msjSuccess": "Password change successfully."
     }
   },
   "es": {
@@ -16,7 +21,12 @@
       "btn": "Inicio de sesion"
     },
     "cambioclave": {
-      "title": "Cambio de Clave"
+      "title": "Cambio de Clave",
+      "btn": "Cambiar clave",
+      "errorForm1": "Los datos ingresados no son validos.",
+      "errorForm2": "La contraseña actual no corresponde con la confirmacion.",
+      "errorForm3": "La contraseña actual que colocó es incorrecta.",
+      "msjSuccess": "Cambió su constraseña satisfactoriamente"
     }
   }
 }

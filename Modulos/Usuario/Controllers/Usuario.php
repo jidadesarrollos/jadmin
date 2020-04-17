@@ -53,16 +53,17 @@ class Usuario extends Control {
 
     public function cambioClave() {
 
+        $textos = Textos::obtener();
         $formName = (Estructura::$idioma === 'en') ? 'jida/ChangePasword' : 'jida/CambioClave';
         $formCambioClave = new Formulario($formName);
-        $formCambioClave->boton('principal', 'Cambiar Clave');
+        $formCambioClave->boton('principal', $textos->texto('btn'));
 
         $this->data(['formulario' => $formCambioClave->render()]);
 
         if ($this->post('btnCambioClave')) {
 
             if (!$formCambioClave->validar()) {
-                Mensajes::almacenar(Mensajes::error('Los datos introducidos no son validos.'));
+                Mensajes::almacenar(Mensajes::error('Los datos ingresados no son validos.'));
                 return null;
 
             }
