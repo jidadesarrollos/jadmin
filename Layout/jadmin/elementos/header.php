@@ -28,6 +28,7 @@
                     <div class="dropdown-header">
                         <i class="i-Lock-User mr-1"></i> <?= \Jida\Medios\Sesion::$usuario->nombre() ?>
                     </div>
+
                     <a
                         class="dropdown-item"
                         href="<?= $this->urlBase ?>/jadmin/usuario/cambioclave"><?= $this->texto('menu', 'resetPassword') ?></a>
