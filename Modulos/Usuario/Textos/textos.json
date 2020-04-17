@@ -1,20 +1,18 @@
 {
-  "en": {
-    "login": {
-      "title": "Log In",
-      "errorForm": "User or password are invalid",
-      "btn": "Log in"
-    },
-    "cambioclave": {
-      "title": "Password Change",
-      "btn": "Change password",
-      "errorForm1": "The data entered is not valid.",
-      "errorForm2": "The current password is not the same as the confirmation.",
-      "errorForm3": "The current password you entered is incorrect.",
-      "msjSuccess": "Password change successfully."
-    }
-  },
   "es": {
+    "index": {
+      "title": "Usuarios",
+      "th1": "Usuario",
+      "th2": "Nombre",
+      "th3": "Apellido",
+      "th4": "Correo",
+      "th5": "Perfiles",
+      "th6": "Estatus",
+      "actionTitle1": "Cambiar Perfiles",
+      "actionTitle2": "Editar Usuario",
+      "actionTitle3": "Eliminar usuario",
+      "btnAddNew": "Nuevo Usuario"
+    },
     "login": {
       "title": "Inicio de sesion",
       "errorForm": "Usuario o clave inválidos",
@@ -27,6 +25,34 @@
       "errorForm2": "La contraseña actual no corresponde con la confirmacion.",
       "errorForm3": "La contraseña actual que colocó es incorrecta.",
       "msjSuccess": "Cambió su constraseña satisfactoriamente"
+    }
+  },
+  "en": {
+    "index": {
+      "title": "Users",
+      "th1": "User",
+      "th2": "Name",
+      "th3": "Lastname",
+      "th4": "Email",
+      "th5": "Profiles",
+      "th6": "Status",
+      "actionTitle1": "Change profiles",
+      "actionTitle2": "Edit User",
+      "actionTitle3": "Delete user",
+      "btnAddNew": "New user"
+    },
+    "login": {
+      "title": "Log In",
+      "errorForm": "User or password are invalid",
+      "btn": "Log in"
+    },
+    "cambioclave": {
+      "title": "Password Change",
+      "btn": "Change password",
+      "errorForm1": "The data entered is not valid.",
+      "errorForm2": "The current password is not the same as the confirmation.",
+      "errorForm3": "The current password you entered is incorrect.",
+      "msjSuccess": "Password change successfully."
     }
   }
 }

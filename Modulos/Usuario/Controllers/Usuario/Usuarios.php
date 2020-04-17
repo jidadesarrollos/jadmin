@@ -8,6 +8,7 @@
 
 namespace Jadmin\Modulos\Usuario\Controllers\Usuario;
 
+use Jida\Manager\Textos;
 use Jida\Medios\Debug;
 use Jida\Medios\Mensajes;
 use Jida\Modulos\Usuarios\Modelos\Perfil;
@@ -20,25 +21,33 @@ trait Usuarios {
 
     public function index() {
 
+        $textos = Textos::obtener();
         $listaUsuarios = Usuario::listaUsuarios();
-        $parametros = ['titulos' => ['Usuario', 'Nombre', 'Apellido', 'Correo', 'Perfiles', 'Estatus']];
+        $parametros = ['titulos' => [
+            $textos->texto('th1'),
+            $textos->texto('th2'),
+            $textos->texto('th3'),
+            $textos->texto('th4'),
+            $textos->texto('th5'),
+            $textos->texto('th6')
+        ]];
         $vista = new JVista($listaUsuarios, $parametros);
 
         $vista->accionesFila([
             ['span'  => 'fas fa-user-alt',
-             'title' => 'Cambiar Perfiles',
+             'title' => $textos->texto('actionTitle1'),
              'href'  => '/jadmin/usuario/perfil/{clave}'],
             ['span'  => 'fa fa-edit',
-             'title' => "Editar Usuario",
+             'title' => $textos->texto('actionTitle2'),
              'href'  => '/jadmin/usuario/gestion/{clave}'],
             ['span'        => 'fa fa-trash',
-             'title'       => 'Eliminar usuario',
+             'title'       => $textos->texto('actionTitle3'),
              'href'        => '/jadmin/usuario/eliminar/{clave}',
              'data-jvista' => 'confirm',
              'data-msj'    => '<h3>¡Cuidado!</h3>&iquest;Realmente desea eliminar el cliente seleccionado?']
         ]);
         $vista->acciones([
-            'Nuevo Usuario' => ['href' => '/jadmin/usuario/gestion/']
+            $textos->texto('btnAddNew') => ['href' => '/jadmin/usuario/gestion/']
         ]);
 
         $render = $vista->render(
@@ -51,7 +60,7 @@ trait Usuarios {
                     }
                     $listaPerfiles .= '</ul>';
                     $users['perfiles'] = $listaPerfiles;
-                    $users['id_estatus'] = $users['id_estatus'] == 1 ? 'Activo' : 'Inactivo';
+                    $users['id_estatus'] = $users['id_estatus'] == 1 ? 'Active' : 'Inactive';
                 }
                 return $datos;
             }
