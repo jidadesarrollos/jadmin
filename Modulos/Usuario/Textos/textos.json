@@ -4,6 +4,9 @@
       "title": "Log In",
       "errorForm": "User or password are invalid",
       "btn": "Log in"
+    },
+    "cambioclave": {
+      "title": "Password Change"
     }
   },
   "es": {
@@ -11,6 +14,9 @@
       "title": "Inicio de sesion",
       "errorForm": "Usuario o clave inválidos",
       "btn": "Inicio de sesion"
+    },
+    "cambioclave": {
+      "title": "Cambio de Clave"
     }
   }
 }
