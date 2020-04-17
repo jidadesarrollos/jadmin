@@ -63,13 +63,13 @@ class Usuario extends Control {
         if ($this->post('btnCambioClave')) {
 
             if (!$formCambioClave->validar()) {
-                Mensajes::almacenar(Mensajes::error('Los datos ingresados no son validos.'));
+                Mensajes::almacenar(Mensajes::error($textos->texto('errorForm1')));
                 return null;
 
             }
 
             if ($this->post('nueva_clave') !== $this->post('confirmacion_clave')) {
-                Mensajes::almacenar(Mensajes::error('La contraseña actual no corresponde con la confirmacion.'));
+                Mensajes::almacenar(Mensajes::error($textos->texto('errorForm2')));
                 return;
             }
 
@@ -77,11 +77,11 @@ class Usuario extends Control {
             $claveNueva = $this->post('nueva_clave');
 
             if (!Sesion::$usuario->cambiarClave($claveVieja, $claveNueva)) {
-                Mensajes::almacenar(Mensajes::error('La contraseña actual que colocó es incorrecta.'));
+                Mensajes::almacenar(Mensajes::error($textos->texto('errorForm3')));
                 return;
             }
 
-            Mensajes::almacenar(Mensajes::suceso('Cambió su constraseña satisfactoriamente'));
+            Mensajes::almacenar(Mensajes::suceso($textos->texto('msjSuccess')));
 
         }
 
