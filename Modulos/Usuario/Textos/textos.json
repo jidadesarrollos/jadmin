@@ -25,6 +25,11 @@
       "errorForm2": "La contraseña actual no corresponde con la confirmacion.",
       "errorForm3": "La contraseña actual que colocó es incorrecta.",
       "msjSuccess": "Cambió su constraseña satisfactoriamente"
+    },
+    "perfil": {
+      "title": "Perfiles de Usuario",
+      "btnSave": "Guardar",
+      "btnBack": "Volver a Usuarios"
     }
   },
   "en": {
@@ -53,6 +58,11 @@
       "errorForm2": "The current password is not the same as the confirmation.",
       "errorForm3": "The current password you entered is incorrect.",
       "msjSuccess": "Password change successfully."
+    },
+    "perfil": {
+      "title": "User Profiles",
+      "btnSave": "Save",
+      "btnBack": "Back Users"
     }
   }
 }
