@@ -53,7 +53,7 @@ class Usuario extends Control {
 
     public function cambioClave() {
 
-        $formName = (Estructura::$idioma === 'en') ? 'jida/ChangePasword_en' : 'jida/CambioClave';
+        $formName = (Estructura::$idioma === 'en') ? 'jida/ChangePasword' : 'jida/CambioClave';
         $formCambioClave = new Formulario($formName);
         $formCambioClave->boton('principal', 'Cambiar Clave');
 
