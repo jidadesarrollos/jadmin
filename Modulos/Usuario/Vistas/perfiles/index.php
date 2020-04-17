@@ -1,5 +1,5 @@
 <div class="card">
-    <h4 class="card-header">Perfiles</h4>
+    <h4 class="card-header"><?= $this->texto('title') ?></h4>
     <div class="card-body">
         <div id="vista" class="row">
             <div class="col-12">

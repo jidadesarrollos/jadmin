@@ -7,8 +7,10 @@
     }
   },
   "es": {
-    "title": "Inicio de sesion",
-    "errorForm": "Usuario o clave inválidos",
-    "btn": "Inicio de sesion"
+    "login": {
+      "title": "Inicio de sesion",
+      "errorForm": "Usuario o clave inválidos",
+      "btn": "Inicio de sesion"
+    }
   }
 }
