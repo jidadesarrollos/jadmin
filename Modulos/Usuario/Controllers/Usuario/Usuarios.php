@@ -116,6 +116,7 @@ trait Usuarios {
         $textos = Textos::obtener();
         $formName = (Estructura::$idioma == es) ? 'GestionUsuarios' : 'ManageUsers';
         $form = new Formulario('jida/Usuarios/' . $formName, $id_usuario);
+        $form->boton('principal')->attr('value', $textos->texto('btn'));
         $usuario = new Usuario($id_usuario);
 
         if ($this->post('btnUsuarios')) {

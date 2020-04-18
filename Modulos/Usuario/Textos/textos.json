@@ -35,7 +35,8 @@
       "title": "Usuarios",
       "actionSave": "guardado",
       "actionEdit": "modificado",
-      "msjSuccess": "El usuario ha sido %s exitosamente."
+      "msjSuccess": "El usuario ha sido %s exitosamente.",
+      "btn": "Guardar"
     }
   },
   "en": {
@@ -74,7 +75,8 @@
       "title": "Users",
       "actionSave": "saved",
       "actionEdit": "modified",
-      "msjSuccess": "This user has been %s successfully."
+      "msjSuccess": "This user has been %s successfully.",
+      "btn": "Save"
     }
   }
 }
