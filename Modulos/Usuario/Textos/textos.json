@@ -37,6 +37,11 @@
       "actionEdit": "modificado",
       "msjSuccess": "El usuario ha sido %s exitosamente.",
       "btn": "Guardar"
+    },
+    "aliminar": {
+      "msjSuccess": "El usuario ha sido eliminado exitosamente.",
+      "msjError1": "El usuario no ha sido eliminado.",
+      "msjError2": "El usuario no existe."
     }
   },
   "en": {
@@ -77,6 +82,11 @@
       "actionEdit": "modified",
       "msjSuccess": "This user has been %s successfully.",
       "btn": "Save"
+    },
+    "aliminar": {
+      "msjSuccess": "This user has been successfully removed.",
+      "msjError1": "This user could not be removed.",
+      "msjError2": "This user does not exist."
     }
   }
 }

@@ -155,21 +155,23 @@ trait Usuarios {
 
     public function eliminar($id_usuario) {
 
+        $textos = Textos::obtener();
+
         if (!empty($id_usuario)) {
 
             $usuario = new Usuario($id_usuario);
             if (!empty($usuario->id_usuario) and $usuario->eliminar()) {
-                Mensajes::almacenar(Mensajes::suceso('El usuario ha sido eliminado correctamente'));
+                Mensajes::almacenar(Mensajes::suceso($textos->texto('msjSuccess')));
                 $this->redireccionar('/jadmin/usuario');
             }
             else {
-                Mensajes::almacenar(Mensajes::error('El usuario no ha sido eliminado'));
+                Mensajes::almacenar(Mensajes::error($textos->texto('msjError1')));
                 $this->redireccionar('/jadmin/usuario');
             }
 
         }
         else {
-            Mensajes::almacenar(Mensajes::error('El usuario indicado no existe.'));
+            Mensajes::almacenar(Mensajes::error($textos->texto('msjError2')));
             $this->redireccionar('/jadmin/usuario');
         }
     }
