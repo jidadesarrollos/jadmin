@@ -29,7 +29,8 @@
     "perfil": {
       "title": "Perfiles de Usuario",
       "btnSave": "Guardar",
-      "btnBack": "Volver a Usuarios"
+      "btnBack": "Volver a Usuarios",
+      "msjSuccess": "Perfiles modificados con exito."
     },
     "gestion": {
       "title": "Usuarios",
@@ -74,7 +75,8 @@
     "perfil": {
       "title": "User Profiles",
       "btnSave": "Save",
-      "btnBack": "Back Users"
+      "btnBack": "Back Users",
+      "msjSuccess": "Profiles successfully modified."
     },
     "gestion": {
       "title": "Users",

@@ -75,6 +75,7 @@ trait Usuarios {
 
     public function perfil($id_usuario) {
 
+        $textos = Textos::obtener();
         $usuarioPerfil = new UsuarioPerfil();
         $usuarioPerfil2 = $usuarioPerfil
             ->consulta(['id_usuario_perfil', 'id_perfil'])
@@ -98,7 +99,7 @@ trait Usuarios {
                 $nuevosPerfiles[] = ['id_perfil' => $list, 'id_usuario' => $id_usuario];
             }
             $usuarioPerfil->salvarTodo($nuevosPerfiles);
-            Mensajes::almacenar(Mensajes::suceso('Perfiles modificados con exito'));
+            Mensajes::almacenar(Mensajes::suceso($textos->texto('msjSuccess')));
             $this->redireccionar('/jadmin/usuario');
 
         }
