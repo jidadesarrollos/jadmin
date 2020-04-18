@@ -38,7 +38,7 @@
       "msjSuccess": "El usuario ha sido %s exitosamente.",
       "btn": "Guardar"
     },
-    "aliminar": {
+    "eliminar": {
       "msjSuccess": "El usuario ha sido eliminado exitosamente.",
       "msjError1": "El usuario no ha sido eliminado.",
       "msjError2": "El usuario no existe."
@@ -83,7 +83,7 @@
       "msjSuccess": "This user has been %s successfully.",
       "btn": "Save"
     },
-    "aliminar": {
+    "eliminar": {
       "msjSuccess": "This user has been successfully removed.",
       "msjError1": "This user could not be removed.",
       "msjError2": "This user does not exist."
