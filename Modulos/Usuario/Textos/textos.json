@@ -30,6 +30,12 @@
       "title": "Perfiles de Usuario",
       "btnSave": "Guardar",
       "btnBack": "Volver a Usuarios"
+    },
+    "gestion": {
+      "title": "Usuarios",
+      "actionSave": "guardado",
+      "actionEdit": "modificado",
+      "msjSuccess": "El usuario ha sido %s exitosamente."
     }
   },
   "en": {
@@ -63,6 +69,12 @@
       "title": "User Profiles",
       "btnSave": "Save",
       "btnBack": "Back Users"
+    },
+    "gestion": {
+      "title": "Users",
+      "actionSave": "saved",
+      "actionEdit": "modified",
+      "msjSuccess": "This user has been %s successfully."
     }
   }
 }

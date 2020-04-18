@@ -15,8 +15,7 @@
                                    name="id_perfil[]"
                                    value="<?= $perfil['id_perfil'] ?>"
                                    id="defaultCheck<?= $perfil['id_perfil'] ?>"
-                                <?= array_intersect([$perfil['id_perfil']], $this->listaPerfiles) ? 'checked' : null ?>
-                            >
+                                <?= array_intersect([$perfil['id_perfil']], $this->listaPerfiles) ? 'checked' : null ?>>
                             <label class="form-check-label" for="defaultCheck<?= $perfil['id_perfil'] ?>">
                                 <?= $perfil['perfil'] ?>
                             </label>

@@ -8,6 +8,7 @@
 
 namespace Jadmin\Modulos\Usuario\Controllers\Usuario;
 
+use Jida\Manager\Estructura;
 use Jida\Manager\Textos;
 use Jida\Medios\Debug;
 use Jida\Medios\Mensajes;
@@ -112,7 +113,9 @@ trait Usuarios {
 
     public function gestion($id_usuario = "") {
 
-        $form = new Formulario('jida/Usuarios/GestionUsuarios', $id_usuario);
+        $textos = Textos::obtener();
+        $formName = (Estructura::$idioma == es) ? 'GestionUsuarios' : 'ManageUsers';
+        $form = new Formulario('jida/Usuarios/' . $formName, $id_usuario);
         $usuario = new Usuario($id_usuario);
 
         if ($this->post('btnUsuarios')) {
@@ -131,8 +134,8 @@ trait Usuarios {
 
                 if ($usuario->salvar($this->post())) {
 
-                    $accion = (empty($id)) ? 'guardado' : 'modificado';
-                    Mensajes::almacenar(Mensajes::suceso("El usuario ha sido {$accion} correctamente"));
+                    $accion = (empty($id)) ? $textos->texto('actionSave') : $textos->texto('actionEdit');
+                    Mensajes::almacenar(Mensajes::suceso(sprintf($textos->texto('msjSuccess'), $accion)));
                     $this->redireccionar('/jadmin/usuario');
                 }
                 else {
