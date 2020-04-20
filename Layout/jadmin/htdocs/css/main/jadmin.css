@@ -18479,3 +18479,7 @@ blockquote {
 
 body {
 		font-size: 12px; }
+
+.form-group .radio label {
+	margin-left: 20px;
+}
