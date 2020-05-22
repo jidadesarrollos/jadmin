@@ -46,10 +46,11 @@ trait Usuarios {
                 'href'  => '/jadmin/usuario/gestion/{clave}'
             ],
             [
-                'span'         => 'fas fa-trash',
-                'title'        => $textos->texto('actionTitle3'),
-                'href'         => '/jadmin/usuario/eliminar/{clave}',
-                'data-confirm' => 'delete'
+                'span'        => 'fas fa-trash',
+                'title'       => $textos->texto('actionTitle3'),
+                'href'        => '/jadmin/usuario/eliminar/{clave}',
+                'data-jvista' => 'confirm',
+                'data-msj'    => '<h3>¡Cuidado!</h3>&iquest;Realmente desea eliminar el registro seleccionado?'
             ]
         ]);
         $vista->acciones([

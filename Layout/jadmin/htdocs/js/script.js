@@ -77,12 +77,12 @@ $(document).ready(function () {
 
     $('[data-fullscreen]').on('click', toggleFullscreen);
 
-    const btnDelete = document.querySelectorAll('[data-confirm="delete"]');
-    const confirmDelete = (event) => {
+    const btnConfirm = document.querySelectorAll('[data-jvista="confirm"]');
+    const confirmAction = (event) => {
         event.preventDefault();
         const target = event.currentTarget;
         bootbox.confirm({
-            message: '¿Realmente desea eliminar el registro seleccionado?',
+            message: target.dataset.msj,
             buttons: {
                 confirm: {
                     label: 'Si',
@@ -98,6 +98,6 @@ $(document).ready(function () {
             }
         });
     };
-    btnDelete.forEach(btn => btn.addEventListener('click', confirmDelete));
+    btnConfirm.forEach(btn => btn.addEventListener('click', confirmAction));
 
 });
