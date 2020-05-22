@@ -35,17 +35,22 @@ trait Usuarios {
         $vista = new JVista($listaUsuarios, $parametros);
 
         $vista->accionesFila([
-            ['span'  => 'fas fa-user-alt',
-             'title' => $textos->texto('actionTitle1'),
-             'href'  => '/jadmin/usuario/perfil/{clave}'],
-            ['span'  => 'fas fa-edit',
-             'title' => $textos->texto('actionTitle2'),
-             'href'  => '/jadmin/usuario/gestion/{clave}'],
-            ['span'        => 'fas fa-trash',
-             'title'       => $textos->texto('actionTitle3'),
-             'href'        => '/jadmin/usuario/eliminar/{clave}',
-             'data-jvista' => 'confirm',
-             'data-msj'    => '<h3>¡Cuidado!</h3>&iquest;Realmente desea eliminar el cliente seleccionado?']
+            [
+                'span'  => 'fas fa-user-alt',
+                'title' => $textos->texto('actionTitle1'),
+                'href'  => '/jadmin/usuario/perfil/{clave}'
+            ],
+            [
+                'span'  => 'fas fa-edit',
+                'title' => $textos->texto('actionTitle2'),
+                'href'  => '/jadmin/usuario/gestion/{clave}'
+            ],
+            [
+                'span'         => 'fas fa-trash',
+                'title'        => $textos->texto('actionTitle3'),
+                'href'         => '/jadmin/usuario/eliminar/{clave}',
+                'data-confirm' => 'delete'
+            ]
         ]);
         $vista->acciones([
             $textos->texto('btnAddNew') => ['href' => '/jadmin/usuario/gestion/']

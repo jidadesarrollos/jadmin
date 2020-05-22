@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    "use strict";
-    var $searchInput = $(".search-bar input");
-    var $searchCloseBtn = $(".search-close");
+    'use strict';
+    var $searchInput = $('.search-bar input');
+    var $searchCloseBtn = $('.search-close');
 
     // Reusable utilities
     window.gullUtils = {
         isMobile: function isMobile() {
-            return window && window.matchMedia("(max-width: 767px)").matches;
+            return window && window.matchMedia('(max-width: 767px)').matches;
         },
         changeCssLink: function (storageKey, fileUrl) {
             localStorage.setItem(storageKey, fileUrl);
@@ -15,12 +15,12 @@ $(document).ready(function () {
     }
 
     // Search toggle
-    var $searchUI = $(".search-ui");
-    $searchInput.on("focus", function () {
-        $searchUI.addClass("open");
+    var $searchUI = $('.search-ui');
+    $searchInput.on('focus', function () {
+        $searchUI.addClass('open');
     });
-    $searchCloseBtn.on("click", function () {
-        $searchUI.removeClass("open");
+    $searchCloseBtn.on('click', function () {
+        $searchUI.removeClass('open');
     });
 
     // Perfect scrollbar
@@ -37,10 +37,11 @@ $(document).ready(function () {
         var requestMethod = el.cancelFullScreen || el.webkitCancelFullScreen || el.mozCancelFullScreen || el.exitFullscreen;
         if (requestMethod) { // cancel full screen.
             requestMethod.call(el);
-        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-            var wscript = new ActiveXObject("WScript.Shell");
+        }
+        else if (typeof window.ActiveXObject !== 'undefined') { // Older IE.
+            var wscript = new ActiveXObject('WScript.Shell');
             if (wscript !== null) {
-                wscript.SendKeys("{F11}");
+                wscript.SendKeys('{F11}');
             }
         }
     }
@@ -51,10 +52,11 @@ $(document).ready(function () {
 
         if (requestMethod) { // Native full screen.
             requestMethod.call(el);
-        } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
-            var wscript = new ActiveXObject("WScript.Shell");
+        }
+        else if (typeof window.ActiveXObject !== 'undefined') { // Older IE.
+            var wscript = new ActiveXObject('WScript.Shell');
             if (wscript !== null) {
-                wscript.SendKeys("{F11}");
+                wscript.SendKeys('{F11}');
             }
         }
         return false
@@ -66,12 +68,36 @@ $(document).ready(function () {
 
         if (isInFullScreen) {
             cancelFullScreen(document);
-        } else {
+        }
+        else {
             requestFullScreen(elem);
         }
         return false;
     }
+
     $('[data-fullscreen]').on('click', toggleFullscreen);
 
+    const btnDelete = document.querySelectorAll('[data-confirm="delete"]');
+    const confirmDelete = (event) => {
+        event.preventDefault();
+        const target = event.currentTarget;
+        bootbox.confirm({
+            message: '¿Realmente desea eliminar el registro seleccionado?',
+            buttons: {
+                confirm: {
+                    label: 'Si',
+                    className: 'btn btn-danger'
+                },
+                cancel: {
+                    label: 'No',
+                    className: 'btn btn-default'
+                }
+            },
+            callback: (result) => {
+                if (result) window.location.href = target.href;
+            }
+        });
+    };
+    btnDelete.forEach(btn => btn.addEventListener('click', confirmDelete));
 
 });
