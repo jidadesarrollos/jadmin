@@ -22918,8 +22918,8 @@ span.fa.fa-chevron-right:before {
 }
 
 .main-header .logo img {
-    width: 60px;
-    height: 60px;
+    max-width: 100px;
+    max-height: 60px;
     margin: 0 auto;
     display: block;
 }
