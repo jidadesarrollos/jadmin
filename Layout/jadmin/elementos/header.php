@@ -1,6 +1,6 @@
 <?php
 
-//\Jida\Medios\Debug::imprimir([$this->textos], true);
+//\Jida\Medios\Debug::imprimir([$this->texto('menu', 'resetPassword')], true);
 ?>
 <navbar class="main-header jd-navbar-menu">
     <div class="logo">
@@ -21,20 +21,21 @@
         <!-- User avatar dropdown -->
         <div class="dropdown">
             <i
-                class="i-Administrator user-avatar" id="dropdownMenuButton" data-toggle="dropdown"
-                aria-haspopup="true" role="button" aria-expanded="false"></i>
+                    class="i-Administrator user-avatar" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" role="button" aria-expanded="false"></i>
             <div class="user col align-self-end">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <div class="dropdown-header">
                         <i class="i-Lock-User mr-1"></i> <?= \Jida\Medios\Sesion::$usuario->nombre() ?>
                     </div>
-
-                    <a
-                        class="dropdown-item"
-                        href="<?= $this->urlBase ?>/jadmin/usuario/cambioclave"><?= $this->texto('menu', 'resetPassword') ?></a>
-                    <a
-                        class="dropdown-item"
-                        href="<?= $this->urlBase ?>/jadmin/usuario/logout"><?= $this->texto('menu', 'logout') ?></a>
+                    <a class="dropdown-item"
+                       href="<?= $this->urlBase ?>/jadmin/usuario/cambioclave">
+                        <?= $this->texto('menu', 'resetPassword') ?>
+                    </a>
+                    <a class="dropdown-item"
+                       href="<?= $this->urlBase ?>/jadmin/usuario/logout">
+                        <?= $this->texto('menu', 'logout') ?>
+                    </a>
                 </div>
             </div>
         </div>
