@@ -3,7 +3,7 @@
   "layoutError": "error",
   "layout": "jadmin",
   "link": {
-    "shortcut icon": "{base}/htdocs/img/logo.png"
+    "shortcut icon": "{base}/htdocs/img/favicon/favicon.png"
   },
   "dev": {
     "css": {
